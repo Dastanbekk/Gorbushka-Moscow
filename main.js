@@ -67,3 +67,22 @@
 // const kema1 = new Ship('Samalyot S7',420,150,50)
 // const kema2 = kema1.sail(true)
 // console.log(kema2);
+
+// let element = document.getElementById("company")
+// element.addEventListener("click",function(){
+//     element.style.color = "red"
+// })
+
+let btns = document.getElementById("btns");
+let childs =  btns.children
+console.log(childs);
+
+
+Array.from(childs).forEach((value)=>{
+    value.addEventListener("click", ()=>{
+        value.style.color = "gray"
+        value.style.border = "2px solid gray"
+    })
+})
+
+

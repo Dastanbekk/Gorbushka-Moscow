@@ -1,0 +1,68 @@
+DOM - Document Object Model
+Dom - bu Brauzerdagi har bir elementni Dom yordamida JSga chaqirib ishlatishdir.
+
+DOMda elementlarni chaqirish usullari turlicha masalan
+
+-Elementni Clasi bilan chaqirmoqchi bolsak document.getElementsByClassName selectorini ishlatamiz.
+-Elementni ID bilan chaqirmoqchi bolsak document.getElementById selectorini ishlatamiz.
+-Elementni atribut orqali chaqirmoqchi bolsak document.getElementByTagName selectorini ishlatamiz.
+Va eng kop ishlatilinadigan selectorlarimiz bu 
+-QuerySelector
+VA
+-QuerySelectorAll
+bularning bir biridan farqi Query selector birinchi uchragan elementni chiqaradi, QuerySelectorAll bolsa chaqirilgan elementlarning barchasini chiqaradi.
+
+
+Elementlarni Ozgartirish
+
+Matnni ozgartirish:
+Masalan: let ochib title nomini berdik va unga document.getElementById("title") qilib id orqali matin chaqirib oldik va endi uni ozgartiramiz
+title ozgaruvchimizga murojaat qilamiz yani title.textContent = "Yangi matn".
+
+
+Element atributlarini ozgartirish:
+let img = document.createElement("img"); img yaratdik
+img.setAttribute("src", "rasm.jpg"); srcga setAttribute orqali format berdik
+img.setAttribute("alt", "Tavsif"); setAttribute orqali ung alt yozdik
+document.body.appendChild(img); va appenChild bilan body rasmimizni qoshib qoydik
+
+
+Scc stillarini ozgartirish:
+let title = document.getElementById("title"); deb ID orqali matnimizni chaqirib oldik va endi unga stillarni beramiz
+title.style.color = "red";
+title.style.fontFamily = "sans-serif";
+title.style.fontSize = "30px";
+
+
+Elementni qoshish va ochirish:
+
+Qoshish:
+let newParagraph = document.createElement("p"); newParagraph ozgaruvchisini ochamiz va p elementini yaratamiz
+newParagraph.textContent = "Yangi paragraf!"; va newParagraph ozgaruvchisini chaqiramiz va qoshtirnoq ichida matinimizni ichiga yozamiz
+document.body.appendChild(newParagraph); va appenChild qilib newParagraph yani P tagemizni qoshib qoyamiz bodyga;
+
+O'chirish:
+let element = document.getElementById("title"); Id orqali matinimizni chaqirib olamiz 
+element.remove(); va ozgaruvchimizni chaqirib .bilan remove qilamiz va ochiramiz;
+
+Element ichidagi qiymatni Almashtirish:
+
+let yangiMatn = document.createElement("h1");
+yangiMatn.textContent = "Matn almashtirilgan";
+document.body.replaceChild(yangiMatn, document.getElementById("title"))
+yani yangimatn ozgaruvchisi bilan h1 tageni yaratdik va 
+yangmatnTexContent qilib ichiga matn yozdik 
+va replace(metodini qolladik bu metod mavjud elementni yangi elementga almashtirib beradi);
+
+
+
+
+
+
+                            DOM Hodisalari yani DOM Events
+
+Dom events - bu brauzerdagi hodisalar yani mishka bosilishi mishka ustiga borishi va formalar yuborilishi search yani qidirishni bosishlarimiz, klaviatura bosilishi, Eventlar veb-sahifamizni interaktiv qilish uchun ishlatamiz Hodisalarni JS yordamida kuzatib, ularga mos javob berishimiz mumkun.
+
+Hodisalar qanday ishlaydi?
+
+Hodisalar sodir bolganda, ular hodisa tinglovchi (Event Listener) yordamida aniqlanadi va bajarilishi kerak bolgan kodni ishga tushuradi
